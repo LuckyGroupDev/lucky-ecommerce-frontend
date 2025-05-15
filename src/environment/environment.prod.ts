@@ -1,5 +1,5 @@
 export const environment = {
     production: true,
-    apiBaseUrl: 'https://mi-api-en-produccion.com/api'
+    apiBaseUrl: 'https://lucky-ecommerce-backend.onrender.com/api'
   };
   
