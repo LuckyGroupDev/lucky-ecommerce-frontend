@@ -1,0 +1,29 @@
+h1 {
+  margin-bottom: 20px;
+}
+
+.dashboard-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.dashboard-card {
+  flex: 1 1 200px;
+  text-align: center;
+}
+
+canvas {
+  max-width: 100%;
+  margin-bottom: 30px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 8px;
+}

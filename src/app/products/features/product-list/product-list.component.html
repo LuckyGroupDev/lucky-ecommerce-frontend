@@ -1,0 +1,85 @@
+<mat-card>
+
+  <!-- Botón Agregar -->
+  <div class="actions-header">
+    <button mat-raised-button color="primary" (click)="openAddDialog()">
+      <mat-icon>add</mat-icon>
+      Agregar Producto
+    </button>
+  </div>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="productId">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let product"> {{ product.productId }} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="productName">
+      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+      <td mat-cell *matCellDef="let product"> {{ product.productName }} </td>
+    </ng-container>
+
+    <!-- Supplier Column -->
+    <ng-container matColumnDef="supplierId">
+      <th mat-header-cell *matHeaderCellDef> Proveedor </th>
+      <td mat-cell *matCellDef="let product"> {{ product.supplierId }} </td>
+    </ng-container>
+
+    <!-- Category Column -->
+    <ng-container matColumnDef="categoryId">
+      <th mat-header-cell *matHeaderCellDef> Categoría </th>
+      <td mat-cell *matCellDef="let product"> {{ product.categoryId }} </td>
+    </ng-container>
+
+    <!-- Quantity Per Unit Column -->
+    <ng-container matColumnDef="quantityPerUnit">
+      <th mat-header-cell *matHeaderCellDef> Cantidad por unidad </th>
+      <td mat-cell *matCellDef="let product"> {{ product.quantityPerUnit }} </td>
+    </ng-container>
+
+    <!-- Price Column -->
+    <ng-container matColumnDef="unitPrice">
+      <th mat-header-cell *matHeaderCellDef> Precio </th>
+      <td mat-cell *matCellDef="let product"> {{ product.unitPrice | currency }} </td>
+    </ng-container>
+
+    <!-- Units In Stock Column -->
+    <ng-container matColumnDef="unitsInStock">
+      <th mat-header-cell *matHeaderCellDef> Unidades en Stock </th>
+      <td mat-cell *matCellDef="let product"> {{ product.unitsInStock }} </td>
+    </ng-container>
+
+    <!-- Units On Order Column -->
+    <ng-container matColumnDef="unitsOnOrder">
+      <th mat-header-cell *matHeaderCellDef> Unidades en Pedido </th>
+      <td mat-cell *matCellDef="let product"> {{ product.unitsOnOrder }} </td>
+    </ng-container>
+
+    <!-- Reorder Level Column -->
+    <ng-container matColumnDef="reorderLevel">
+      <th mat-header-cell *matHeaderCellDef> Nivel de Reorden </th>
+      <td mat-cell *matCellDef="let product"> {{ product.reorderLevel }} </td>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Acciones </th>
+      <td mat-cell *matCellDef="let product">
+        <button mat-icon-button color="accent" matTooltip="Editar" (click)="openEditDialog(product)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" matTooltip="Eliminar" (click)="openDeleteConfirmation(product.productId)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <!-- Header and Row Definitions -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+</mat-card>

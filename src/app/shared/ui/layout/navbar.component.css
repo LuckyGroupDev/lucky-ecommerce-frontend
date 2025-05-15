@@ -1,0 +1,23 @@
+.navbar-logo {
+  height: 40px; /* Ajusta el tamaño del logo */
+  margin-right: 16px;
+  cursor: pointer; /* Hace que sea clickeable */
+}
+
+.navbar-logo {
+  width: 150px;
+  height: 50px;
+  cursor: pointer; /* Hace que sea clickeable */
+
+}
+.navbar-title {
+  flex-grow: 1;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.user-actions button {
+  margin-left: 8px;
+}

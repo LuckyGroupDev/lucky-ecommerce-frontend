@@ -1,0 +1,19 @@
+/* edit-dialog.component.css */
+mat-dialog-content {
+    padding: 20px;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  button {
+    margin-right: 10px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  

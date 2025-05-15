@@ -1,0 +1,54 @@
+<h1>Bienvenido, {{ userName() }}!</h1>
+
+<!-- Tarjetas resumen -->
+<div class="dashboard-cards">
+  <mat-card class="dashboard-card">
+    <h2>Total Productos</h2>
+    <p>{{ totalProducts() }}</p>
+  </mat-card>
+
+  <mat-card class="dashboard-card">
+    <h2>Total Ventas</h2>
+    <p>{{ totalSales() }}</p>
+  </mat-card>
+
+  <mat-card class="dashboard-card">
+    <h2>Usuarios Registrados</h2>
+    <p>{{ totalUsers() }}</p>
+  </mat-card>
+
+  <mat-card class="dashboard-card">
+    <h2>Órdenes</h2>
+    <p>{{ totalOrders() }}</p>
+  </mat-card>
+</div>
+
+<!-- Gráfico de Ventas -->
+<h2>Ventas por Mes</h2>
+<canvas baseChart
+  [data]="{
+    labels: salesChartLabels(),
+    datasets: [{ data: salesChartData(), label: 'Ventas' }]
+  }"
+  [options]="chartOptions"
+  chartType="line">
+</canvas>
+
+<!-- Gráfico de Stock -->
+<h2>Stock por Categoría</h2>
+<canvas baseChart
+  [data]="{
+    labels: stockChartLabels(),
+    datasets: [{ data: stockChartData(), label: 'Stock', backgroundColor: ['#42A5F5', '#66BB6A', '#FFA726', '#AB47BC', '#FF7043'] }]
+  }"
+  [options]="chartOptions"
+  chartType="bar">
+</canvas>
+
+<!-- Top Productos -->
+<h2>Top 5 Productos Más Vendidos</h2>
+<ul>
+  <li *ngFor="let product of topProducts()">
+    {{ product.name }} - {{ product.sales }} ventas
+  </li>
+</ul>

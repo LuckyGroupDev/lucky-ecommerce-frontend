@@ -1,0 +1,40 @@
+<mat-toolbar color="primary" class="navbar-container">
+    <!-- Logo -->
+    <img src="/assets/images/logo.png" alt="Logo" class="navbar-logo" (click)="onToggleSidenav()">
+  
+    <!-- Título de la aplicación -->
+    <span class="navbar-title">E-Commerce</span>
+  
+    <!-- Espaciador para alinear los elementos -->
+    <span class="spacer"></span>
+  
+    <!-- Barra de búsqueda (oculta o visible según el estado) -->
+    <ng-container *ngIf="showSearch">
+      <mat-form-field appearance="outline" class="search-bar">
+        <mat-label>Buscar</mat-label>
+        <input matInput [(ngModel)]="searchQuery" (input)="onSearchChange()">
+        <button mat-icon-button matSuffix (click)="onClearSearch()">
+          <mat-icon>clear</mat-icon>
+        </button>
+      </mat-form-field>
+    </ng-container>
+  
+    <!-- Botones de usuario y otras acciones -->
+    <div class="user-actions">
+      <button mat-icon-button (click)="goToProfile()">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <button mat-icon-button (click)="toggleTheme()">
+        <mat-icon>light_mode</mat-icon>
+      </button>
+      <button mat-icon-button (click)="logout()">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </div>
+  
+    <!-- Botón de menú (hamburguesa) -->
+    <button mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar>
+  
